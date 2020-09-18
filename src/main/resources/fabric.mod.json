@@ -1,16 +1,15 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "player-tracker",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Player Tracker",
+  "description": "",
   "authors": [
-    "Me!"
+    "eeasee"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/X-Green/Minecraft-Player-Tracker-Fabric"
   },
 
   "license": "CC0-1.0",
@@ -19,19 +18,15 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "pt.mixins.json"
   ],
 
   "depends": {
     "fabricloader": ">=0.7.4",
     "fabric": "*",
     "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }
