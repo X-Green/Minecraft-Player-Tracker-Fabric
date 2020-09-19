@@ -4,6 +4,7 @@
   "package": "dev.eeasee.player_tracker.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ServerPlayNetworkHandlerMixin"
   ],
   "client": [
   ],

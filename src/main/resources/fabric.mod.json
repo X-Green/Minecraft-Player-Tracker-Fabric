@@ -18,6 +18,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
+      "dev.eeasee.player_tracker.events.ServerStart"
     ]
   },
   "mixins": [
