@@ -5,8 +5,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import dev.eeasee.player_tracker.data.PlayerTrackedData;
-import dev.eeasee.player_tracker.utils.Messenger;
-import dev.eeasee.player_tracker.utils.PlayerTrackedDataOperator;
+import dev.eeasee.player_tracker.utils.TrackedDataUtils;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 
@@ -22,7 +21,7 @@ public class CommandPlayerTracker {
 
     private static int test(CommandContext<ServerCommandSource> commandContext) throws CommandSyntaxException {
         ServerPlayerEntity playerEntity =  commandContext.getSource().getPlayer();
-        PlayerTrackedData data = PlayerTrackedDataOperator.getFromPlayer(playerEntity);
+        PlayerTrackedData data = TrackedDataUtils.getFromPlayer(playerEntity);
         System.out.println(data);
         return 1;
     }

@@ -6,7 +6,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.dimension.DimensionType;
 
-public class PlayerTrackedDataOperator {
+public class TrackedDataUtils {
 
     public static ChunkPos getLastEnteredChunkPos(PlayerTrackedData data) {
         return (data.chunkVisited.size() == 0) ?

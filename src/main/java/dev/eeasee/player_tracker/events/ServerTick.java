@@ -3,7 +3,7 @@ package dev.eeasee.player_tracker.events;
 import dev.eeasee.player_tracker.data.PlayerTrackedData;
 import dev.eeasee.player_tracker.fakes.IServerPlayNetworkHandler;
 import dev.eeasee.player_tracker.utils.Pair;
-import dev.eeasee.player_tracker.utils.PlayerTrackedDataOperator;
+import dev.eeasee.player_tracker.utils.TrackedDataUtils;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.PlayerManager;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -24,10 +24,10 @@ class ServerTick {
         ChunkPos chunkPos = new ChunkPos(player.chunkX, player.chunkZ);
         Long time = System.currentTimeMillis();
 
-        if (dimension != PlayerTrackedDataOperator.getLastEnteredDim(trackedData)) {
+        if (dimension != TrackedDataUtils.getLastEnteredDim(trackedData)) {
             trackedData.dimensionVisited.add(new Pair<>(time, dimension));
             trackedData.chunkVisited.add(new Pair<>(time, chunkPos));
-        } else if (!chunkPos.equals(PlayerTrackedDataOperator.getLastEnteredChunkPos(trackedData))) {
+        } else if (!chunkPos.equals(TrackedDataUtils.getLastEnteredChunkPos(trackedData))) {
             trackedData.chunkVisited.add(new Pair<>(time, chunkPos));
         }
     }
